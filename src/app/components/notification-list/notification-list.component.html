@@ -1,40 +1,18 @@
-<div class="list-group">
-    <a
-      class="list-group-item list-group-item-action flex-column align-items-start active"
-    >
-      <div class="d-flex w-100 justify-content-between">
-        <h5 class="mb-1">Resident Evil</h5>
-        <small>27/11/2022</small>
-      </div>
-      <p class="mb-1">
-        Enfrente armas biológicas criadas por corporações farmacêuticas ou grupos
-        terroristas nesse clássico do Survival Horror.
-      </p>
-    </a>
-    <a
-      class="list-group-item list-group-item-action flex-column align-items-start"
-    >
-      <div class="d-flex w-100 justify-content-between">
-        <h5 class="mb-1">Silent Hill</h5>
-        <small class="text-muted">27/11/2022</small>
-      </div>
-      <p class="mb-1">
-        Enfrente seus piores pesadelos em Silent Hill, um clássico do terror
-        psicológico.
-      </p>
-    </a>
-    <a
-      class="list-group-item list-group-item-action flex-column align-items-start"
-    >
-      <div class="d-flex w-100 justify-content-between">
-        <h5 class="mb-1">Dead Space</h5>
-        <small class="text-muted">27/11/2022</small>
-      </div>
-      <p class="mb-1">
-        O jogador controla o engenheiro chamado Isaac Clarke, que luta contra uma
-        infestação alienígena que transforma humanos em monstros alienígenas
-        chamados "Necromorphs", a bordo de uma nave de mineração espacial chamada
-        USG Ishimura.
-      </p>
-    </a>
-  </div>
+<button (click)="salvarPessoa()" type="button" class="btn btn-primary">
+  Salvar
+</button>
+<button type="button" class="btn btn-secondary">Cancelar</button>
+
+<div *ngFor="let jogo of jogos" class="list-group">
+  <a
+    class="list-group-item list-group-item-action flex-column align-items-start"
+  >
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">{{ jogo.titulo }}</h5>
+      <small>{{ jogo.data }}</small>
+    </div>
+    <p class="mb-1">
+      {{ jogo.descricao }}
+    </p>
+  </a>
+</div>
